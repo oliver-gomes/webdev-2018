@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Roboto";
   background-color: #04c8de;
+  height: 100vh;
 }
 
 code {

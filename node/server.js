@@ -1,7 +1,21 @@
-const http = require("http");
+const express = require("express");
 
-const server = http.createServer(() => {
-  console.log("I hear you! Thanks for the request");
+const app = express();
+
+// app.use((req, res, next) => {
+//   console.log("<h1>Hellllooooo</h1>");
+//   next();
+// });
+
+app.get("/profile", (req, res) => {
+  res.send("getting profile");
+});
+app.get("/", (req, res) => {
+  const user = {
+    name: "Sally",
+    hobby: "soccer"
+  };
+  res.send(user);
 });
 
-server.listen(3000);
+app.listen(3000);

@@ -1,6 +1,22 @@
 import React from "react";
 
 class Signin extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      signInEmail: '',
+      signInPassword: ''
+    }
+  }
+  onEmailChange = (event) => {
+    this.setState({signInEmail: event.target.value})
+  }
+
+  onPasswordChange = (event) => {
+    this.setState({signInPassword: event.target.value})
+  }
+
+  
   render() {
     return (
       <article className="br3 ba dark-gray b--black-10 mv6 shadow-5 w-100 w-50-m w-25-l mw5 center">
@@ -33,7 +49,7 @@ class Signin extends React.Component {
             </fieldset>
             <div className="">
               <input
-                onClick={() => onRouteChange("home")}
+                onClick={() => this.props.onRouteChange("home")}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                 type="submit"
                 value="Sign in"
@@ -41,7 +57,7 @@ class Signin extends React.Component {
             </div>
             <div className="lh-copy mt3">
               <p
-                onClick={() => onRouteChange("register")}
+                onClick={() => this.props.onRouteChange("register")}
                 className="f6 link dim black db pointer"
               >
                 Register
